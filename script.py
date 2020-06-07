@@ -61,6 +61,7 @@ print('Array after shaker', shaker_array )
 print("Compare:",counter_compare)
 print("Replace:", counter_replace)
 print(" Lenght:", len(shaker_array))
+print("Time:")
 print(datetime.now() - start_time)
 for i in range(0, len(shaker_array)):
     shaker_array[i] = str(shaker_array[i])

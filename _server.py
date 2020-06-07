@@ -67,7 +67,7 @@ def getClientHTTP(client):
         print()
         if requestData:
             if client not in OUTPUTS:
-                OUTPUTS.append(client)  # запись дескриптора сокета в список возврата
+                OUTPUTS.append(client)  # запис дескриптора сокета в список на відповідь
         else:
             deleteClientConnection(client)
             requestData = "deleted_client_connection"
@@ -89,7 +89,6 @@ def appendMessage(msg,  command, file):
         handle.close()
         msg = data_for_client
     return  msg
-
 
 def createMessage(sender, command, file):
     msg = ''
@@ -143,9 +142,7 @@ def handling_InputEvents(readList, serverSocket, list_of_lists):
             file = requestData[2]
             data = requestData[3]
             #------------------------------------------------------------------
-
             if command == "data":
-
                 data = data.replace('\\n', "^")
                 data = data.split("^")
                 s = ''
@@ -153,7 +150,6 @@ def handling_InputEvents(readList, serverSocket, list_of_lists):
                     s = s + data[i] + '\n'
                 data = s
                 save_file(command, file, data)
-
             if command == "script":
                 run_script()
             # append lists:
